@@ -10,7 +10,6 @@ const App:React.FC = ()=>{
   const [todos,setTodos]= useState<Todo[]>([])
   const [completedTodos,setCompeletedTodos]=useState<Todo[]>([])
  
-      console.log(todos)
 
 
   const handleAdd = (e:React.FormEvent)=>{
@@ -39,13 +38,15 @@ const App:React.FC = ()=>{
       complete.splice(source.index,1)
     }
 
-    if(destination.droppableId !=='Activetask'){
+    if(destination.droppableId =='Acitvetask'){
       active.splice(destination.index, 0, add)
-      console.log('destination fired');
+      console.log('destination active');
+      console.log(destination.droppableId)
     }else{
       complete.splice(destination.index, 0 , add)
-      console.log('this shouldnot be fired')
-      console.log(add);
+      console.log('destination complete')
+      console.log(destination.droppableId)
+
     }
     
    
